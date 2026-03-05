@@ -20,7 +20,7 @@ Vamos configurar o Debian 13 como controlador de dominio
 
 Nome da máquina : dc01  
 IP da máquina   : 192.168.1.121  
-Domínio         : helio.net 
+Domínio         : xhelionet.com
 
 * ajuste o IP e o gateway de acordo com sua rede, essas são minhas configurações, as suas certamente serão diferentes.
 
@@ -29,14 +29,7 @@ Domínio         : helio.net
 Edite o arquivo:
 
 ```bash
-nano /etc/hostname
-```
-
-Defina o nome:
-
-
-```text
-dc01
+hostnamectl set-hostname dc01
 ```
 
 Para verificar:
@@ -79,7 +72,6 @@ iface enp0s3 inet static
         address 192.168.1.121
         netmask 255.255.255.0
         gateway 192.168.1.254
-        dns-nameservers 192.168.1.121 8.8.8.8
 ```
 
 O que foi alterado?
@@ -132,7 +124,7 @@ Altere para :
 
 ```bash
 127.0.0.1       localhost
-192.168.1.121   dc01.helio.net  dc01
+192.168.1.121   dc01.xhelionet.com  dc01
 ```
 
 ***4-*** Configurando o resolv.conf
@@ -145,8 +137,8 @@ nano /etc/resolv.conf
 ficando assim :
 
 ```bash
-domain helio.net
-search helio.net
+domain xhelionet.com
+search xhelionet.com
 nameserver 192.168.1.121
 nameserver 8.8.8.8
 ```
@@ -160,7 +152,7 @@ Para impedir alterações:
 chattr +i /etc/resolv.conf
 ```
 
-Para permitir edição novamente:
+Para permitir edição novamente QUANDO PRECISAR:
 
 ```bash
 chattr -i /etc/resolv.conf
@@ -192,7 +184,7 @@ Default Kerberos version 5 realm
 Digite:
 
 ```bash
-HELIO.NET
+XHELIONET.COM
 ```
 O realm deve estar em MAIÚSCULO.
 
@@ -256,7 +248,7 @@ active (running)
 Testar DNS
 
 ```bash
-host -t A dc01.exemplo.com
+host -t A dc01.xhelionet.com
 ```
 
 Testar Kerberos
