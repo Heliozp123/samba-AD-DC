@@ -82,7 +82,7 @@ auto enp0s3
 Mudança de dhcp para static
   Agora usamos IP fixo.
 
-address 192.168.1.10
+address 192.168.1.121
   Define o IP do servidor.
 
 netmask 255.255.255.0
@@ -90,9 +90,6 @@ netmask 255.255.255.0
 
 gateway 192.168.1.254
   Define o gateway para acesso à internet.
-
-dns-nameservers 192.168.1.10 8.8.8.8
-  Define os servidores DNS.
 
 Após finalizar:
 
