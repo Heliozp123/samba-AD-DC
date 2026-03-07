@@ -210,11 +210,18 @@ mv /etc/samba/smb.conf /etc/samba/smb.conf.bkp
 samba-tool domain provision --use-rfc2307 --interactive
 ```
 ```text
-Server Role (dc, member, standalone) [dc]: dc 
-(tipo usado pelo Active Directory)DNS backend (SAMBA_INTERNAL, BIND9_FLATFILE, BIND9_DLZ, NONE) [SAMBA_INTERNAL]:
-SAMBA_INTERNAL (confirma uso do DNS interno)DNS forwarder IP address (write 'none' to disable forwarding) [192.168.1.131]: 8.8.8.8 
-(DNS usado para consultas externas)Administrator password: 
-#senha do Administrador do Active Directory (deve ser forte, com no mínimo 7 caracteres)
+Server Role (dc, member, standalone) [dc]: dc
+(tipo usado pelo Active Directory)
+
+DNS backend (SAMBA_INTERNAL, BIND9_FLATFILE, BIND9_DLZ, NONE) [SAMBA_INTERNAL]:
+SAMBA_INTERNAL (confirma uso do DNS interno)
+
+DNS forwarder IP address (write 'none' to disable forwarding) [192.168.1.131]:
+8.8.8.8
+
+Administrator password:
+# senha do Administrador do Active Directory
+# deve ser forte, com no mínimo 7 caracteres
 ```
 ***10-*** Configurando o Kerberos
 
